@@ -22,7 +22,7 @@
     "test": "jest",
     "start": "npm run build && node server.js",
     "watch": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production",
+    "build": "webpack --mode development",
     "prettier": "prettier --write '**/*.{js,jsx}'",
     "lint": "node_modules/eslint/bin/eslint.js src --fix",
     "fix-styles": "prettier-stylelint --write 'src/**/*.{css,scss}'"

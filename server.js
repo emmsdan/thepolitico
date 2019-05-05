@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 1235;
 
 app.use(express.static(path.join(__dirname, '/public')));
 
@@ -12,5 +12,5 @@ app.get('*', (req, res) => {
 
 const server = app.listen(port, () => {
   // eslint-disable-next-line no-console
-  console.log(`Listening on port ${server.address().port}`);
+  console.log(`Listening on port http://localhost:${server.address().port}/`);
 });
