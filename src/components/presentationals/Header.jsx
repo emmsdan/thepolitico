@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import Image from './Image';
 import logo from '../../assets/images/official/logo.png';
 import NavBar from './NavBar';
@@ -23,9 +23,9 @@ const pages = [
   },
 ];
 
-const Header = props => {
+const Header = () => {
   return (
-    <header className={props.header.url}>
+    <header>
       <a href="/">
         <Image image={image} />
       </a>
@@ -33,16 +33,6 @@ const Header = props => {
       <NavBar pages={pages} />
     </header>
   );
-};
-
-Header.propTypes = {
-  header: PropTypes.shape({
-    url: PropTypes.string,
-    poweredby: PropTypes.shape({
-      url: PropTypes.string,
-      text: PropTypes.string,
-    }),
-  }),
 };
 
 export default Header;
