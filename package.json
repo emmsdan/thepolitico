@@ -1,7 +1,7 @@
 {
-  "name": "zinnia-ah-frontend",
+  "name": "politico-frontend",
   "version": "1.0.0",
-  "description": "Authors Haven - A Social platform for the creative at heart.",
+  "description": "A platform, were voters can express their mind and voices",
   "main": "index.js",
   "husky": {
     "hooks": {
@@ -22,7 +22,7 @@
     "test": "jest",
     "start": "npm run build && node server.js",
     "watch": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode development",
+    "build": "webpack --mode production",
     "prettier": "prettier --write '**/*.{js,jsx}'",
     "lint": "node_modules/eslint/bin/eslint.js src --fix",
     "fix-styles": "prettier-stylelint --write 'src/**/*.{css,scss}'"
