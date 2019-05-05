@@ -15,7 +15,7 @@ const Footer = props => {
 Footer.propTypes = {
   footer: PropTypes.shape({
     url: PropTypes.string,
-    poweredby: PropTypes.objectOf({
+    poweredby: PropTypes.shape({
       url: PropTypes.string,
       text: PropTypes.string,
     }),
