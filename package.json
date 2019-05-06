@@ -54,14 +54,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andela/zinnia-ah-frontend.git"
+    "url": "git+https://github.com/emmsdan/thepolitico.git"
   },
   "author": "Team Zinnia",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andela/zinnia-ah-frontend/issues"
+    "url": "https://github.com/emmsdan/thepolitico/issues"
   },
-  "homepage": "https://github.com/andela/zinnia-ah-frontend#readme",
+  "homepage": "https://github.com/emmsdan/thepolitico#readme",
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
