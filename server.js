@@ -10,7 +10,4 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
-const server = app.listen(port, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Listening on port http://localhost:${server.address().port}/`);
-});
+app.listen(port);
