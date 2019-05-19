@@ -2,23 +2,21 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const ToastBar = props => {
+const ToastBar = ({ message, className }) => {
   const [ToastClass, setToastClass] = useState('show');
   return (
     <div
-      className={`toast ${props.toast.class} ${ToastClass}`}
+      className={`toast ${className} ${ToastClass}`}
       onClick={() => setToastClass('hide')}
     >
-      {props.toast.message}
+      {message}
     </div>
   );
 };
 
 ToastBar.propTypes = {
-  toast: PropTypes.shape({
-    message: PropTypes.string,
-    class: PropTypes.string,
-  }),
+  message: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default ToastBar;
