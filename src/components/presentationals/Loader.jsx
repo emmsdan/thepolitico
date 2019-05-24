@@ -15,7 +15,7 @@ const Loader = props => {
     <div className={`center load-overlay ${props.loader}`}>
       <div>
         <div className="loader center" style={styleLoader} />
-        please waiting am loading content...
+        <strong>please waiting am loading content...</strong>
       </div>
     </div>
   );
