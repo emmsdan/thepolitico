@@ -4,13 +4,10 @@ exports[`<FormInput /> should render correctly 1`] = `
 <div
   className="field"
 >
-<<<<<<< HEAD
   <span
     className="error red-text"
     htmlFor="emailAddress"
   />
-=======
->>>>>>> tested FormInput component
   <input
     className="bg-gray"
     defaultValue="sample@email.com"
