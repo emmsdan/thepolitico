@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Image from '../Image';
+import Image from '../Image/Image';
 import logo from '../../assets/images/official/logo.png';
 import NavBar from '../NavBar';
 
