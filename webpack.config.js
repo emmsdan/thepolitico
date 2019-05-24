@@ -1,11 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/Index.jsx',
   output: {
     path: path.join(__dirname, '/public'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -37,6 +39,13 @@ module.exports = {
     ],
   },
   plugins: [
+    new Dotenv({
+      path: './.env.production',
+      safe: true,
+      systemvars: true,
+      silent: true,
+      defaults: true
+    }),
     new HtmlWebpackPlugin({
       template: './index.html',
       inject: 'body',

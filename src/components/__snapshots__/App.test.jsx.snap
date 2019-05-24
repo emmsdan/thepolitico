@@ -5,7 +5,7 @@ exports[`App should render correctly 1`] = `
   <h1
     className="toothy"
   >
-     My React App!! 
+     Welcome to the Politico. 
   </h1>
 </div>
 `;

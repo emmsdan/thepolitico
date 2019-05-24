@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loader /> should render correctly 1`] = `
+<div
+  className="center load-overlay show"
+>
+  <div>
+    <div
+      className="loader center"
+      style={
+        Object {
+          "backgroundImage": "url([object Object])",
+          "backgroundRepeat": "no-repeat",
+          "backgroundSize": "contain",
+          "borderRadius": 0,
+        }
+      }
+    />
+    <strong>
+      please waiting am loading content...
+    </strong>
+  </div>
+</div>
+`;

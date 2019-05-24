@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render correctly 1`] = `
+<button
+  className="btn-large"
+  type="button"
+>
+  create account
+</button>
+`;
+
+exports[`Button should render link button correctly 1`] = `
+<a
+  className="btn-large"
+  href="user-url"
+>
+  create account
+</a>
+`;

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modal /> should render correctly 1`] = `
+<Modal
+  action={
+    Object {
+      "button": Object {
+        "className": "red",
+        "text": "delete",
+      },
+      "onClick": [MockFunction],
+    }
+  }
+  className="deleteModal"
+  content="Hi, I am a Modal"
+  header="Sample Modal header"
+  id="AwesomeModal"
+>
+  <div
+    className="modal"
+    id="AwesomeModal"
+    style={
+      Object {
+        "display": "flex",
+      }
+    }
+  >
+    <div
+      className="modal-content deleteModal"
+    >
+      <h3>
+        Sample Modal header
+      </h3>
+      <div>
+         
+        Hi, I am a Modal
+         
+      </div>
+       
+      <br />
+      <button
+        className="blue-gray button-bigger red close"
+        onClick={[Function]}
+      >
+        delete
+      </button>
+      <button
+        className="blue-gray button-bigger close right"
+        onClick={[Function]}
+      >
+        close
+      </button>
+    </div>
+  </div>
+</Modal>
+`;

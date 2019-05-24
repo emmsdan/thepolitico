@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormButton /> should display button text correctly 1`] = `
+<div
+  className="field"
+>
+  <button
+    className="button-bigger bg-gray"
+    text="Create an Account today"
+    type="submit"
+  >
+    Create an Account today
+  </button>
+</div>
+`;
+
+exports[`<FormButton /> should render correctly 1`] = `
+<div
+  className="field"
+>
+  <button
+    className="button-bigger bg-gray"
+    text="Create an Account today"
+    type="submit"
+  >
+    Create an Account today
+  </button>
+</div>
+`;

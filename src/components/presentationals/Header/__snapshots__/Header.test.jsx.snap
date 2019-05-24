@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should render correctly 1`] = `
+<header>
+  <a
+    href="/"
+  >
+    <Image
+      alt="official politico logo"
+      className="logo"
+      src={
+        Object {
+          "canInstrument": true,
+          "createTransformer": [Function],
+          "getCacheKey": [Function],
+          "process": [Function],
+        }
+      }
+    />
+  </a>
+  <span
+    className="show-nav"
+  >
+     ☰ 
+  </span>
+  <NavBar />
+</header>
+`;
