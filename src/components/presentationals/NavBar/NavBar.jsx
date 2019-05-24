@@ -5,7 +5,7 @@ const NavBar = props => {
   const li = [];
   props.pages.forEach((page, id) => {
     li.push(
-      <li className={page.class} key={id}>
+      <li className={page.className} key={id}>
         <a href={page.url}>{page.title}</a>
       </li>,
     );
