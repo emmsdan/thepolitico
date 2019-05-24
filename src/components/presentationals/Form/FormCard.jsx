@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Form = props => {
+const FormCard = props => {
   return (
     <form {...props} className="form-fields">
       <fieldset className="fieldset">
@@ -12,11 +12,11 @@ const Form = props => {
   );
 };
 
-Form.propTypes = {
+FormCard.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
   header: PropTypes.any,
   children: PropTypes.any,
 };
 
-export default Form;
+export default FormCard;
