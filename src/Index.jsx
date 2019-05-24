@@ -61,7 +61,6 @@ ReactDOM.render(
   <BrowserRouter>
     <Loader loader="show" />
     <Header />
-    
     <ToastBar message="I am a toastbar" className="show" />
     <Form {...form}>
       <FormInput {...input} />
