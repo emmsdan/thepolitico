@@ -59,7 +59,7 @@ const model = {
 
 ReactDOM.render(
   <BrowserRouter>
-    <Loader loader="show" />
+    <Loader loader="hi" />
     <Header />
     <ToastBar message="I am a toastbar" className="show" />
     <Form {...form}>

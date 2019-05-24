@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-// import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from './App';
 
@@ -10,7 +10,7 @@ describe('App', () => {
 
     expect(component).toMatchSnapshot();
     expect(component.html()).toEqual(
-      '<div><h1 class="toothy"> My React App!! </h1></div>',
+      '<div><h1 class="toothy"> Welcome to the Politico. </h1></div>',
     );
   });
 });
