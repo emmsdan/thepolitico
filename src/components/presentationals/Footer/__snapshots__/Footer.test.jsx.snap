@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> should render correctly 1`] = `
+<footer>
+  <div>
+    <a
+      href="http://thepolitico.io/about"
+    >
+      Politico
+    </a>
+     powered by
+    <a
+      href="http://twitter.com/emmsdan"
+    >
+       
+      emmanuel daniel
+       
+    </a>
+  </div>
+</footer>
+`;
