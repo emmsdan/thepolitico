@@ -3,12 +3,7 @@ import PropTypes from 'prop-types';
 
 const Image = ({ src, alt, className, style }) => {
   return (
-    <img
-      src={src}
-      className={className || ''}
-      alt={alt || src}
-      style={style || ''}
-    />
+    <img src={src} className={className || ''} alt={alt || src} style={style} />
   );
 };
 

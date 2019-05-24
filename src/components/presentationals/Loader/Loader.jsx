@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import logo from '../../assets/images/official/favicon.png';
+import logo from '../../../assets/images/official/favicon.png';
 
 const styleLoader = {
   backgroundImage: `url(${logo})`,
