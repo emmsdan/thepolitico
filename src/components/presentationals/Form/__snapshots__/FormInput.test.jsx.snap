@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormInput /> should render correctly 1`] = `
+<div
+  className="field"
+>
+  <input
+    className="bg-gray"
+    defaultValue="sample@email.com"
+    id="emailAddress"
+    name="email"
+    placeholder="enter your email address"
+    title="Email Address"
+    type="submit"
+  />
+  <label
+    htmlFor="emailAddress"
+  >
+    Email Address
+    :
+  </label>
+</div>
+`;
