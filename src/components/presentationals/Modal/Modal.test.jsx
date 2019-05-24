@@ -22,11 +22,4 @@ describe('<Modal />', () => {
     const component = mount(<Modal {...modalContent} />);
     expect(component).toMatchSnapshot();
   });
-
-  it('should simulate close Modal correctly', () => {
-    const component = mount(<Modal {...modalContent} />);
-    const onclick = component.find('.deleteModal');
-    console.log(onclick.simulate('click'))
-    expect(modalContent.action.onClick).toHaveBeenCalledTimes(1);
-  });
 });
