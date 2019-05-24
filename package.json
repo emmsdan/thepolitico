@@ -54,14 +54,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emmsdan/thepolitico.git"
+    "url": "git+https://github.com/andela/zinnia-ah-frontend.git"
   },
   "author": "Team Zinnia",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/emmsdan/thepolitico/issues"
+    "url": "https://github.com/andela/zinnia-ah-frontend/issues"
   },
-  "homepage": "https://github.com/emmsdan/thepolitico#readme",
+  "homepage": "https://github.com/andela/zinnia-ah-frontend#readme",
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
@@ -135,12 +135,8 @@
     "react-router-dom": "^5.0.0",
     "react-tag-input": "^6.4.0",
     "react-test-renderer": "^16.8.6",
-    "react-toastify": "^5.1.1",
-    "react-toasts": "^3.0.3",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.86.0",
     "toastr": "^2.1.4"
   }
 }
