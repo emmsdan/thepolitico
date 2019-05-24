@@ -10,9 +10,9 @@ const styleLoader = {
   borderRadius: 0,
 };
 
-const Loader = props => {
+const Loader = ({ loader }) => {
   return (
-    <div className={`center load-overlay ${props.loader}`}>
+    <div className={`center load-overlay ${loader}`}>
       <div>
         <div className="loader center" style={styleLoader} />
         <strong>please waiting am loading content...</strong>
