@@ -1,25 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FormCard /> should display message correctly 1`] = `
-<form
-  className="form-fields"
-  propTypes={
-    Object {
-      "children": [Function],
-      "className": [Function],
-      "header": [Function],
-      "id": [Function],
-    }
-  }
->
-  <fieldset
-    className="fieldset"
-  >
-    <legend />
-  </fieldset>
-</form>
-`;
-
 exports[`<FormCard /> should render correctly 1`] = `
 <form
   className="form-fields"
