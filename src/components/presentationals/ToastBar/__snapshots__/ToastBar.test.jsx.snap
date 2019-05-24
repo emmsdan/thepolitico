@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ToastBar /> should display message correctly 1`] = `
+<div
+  className="toast bg-gray show"
+  onClick={[Function]}
+>
+  Hi, I am a toastbar
+</div>
+`;
+
+exports[`<ToastBar /> should render correctly 1`] = `
+<div
+  className="toast bg-gray show"
+  onClick={[Function]}
+>
+  Hi, I am a toastbar
+</div>
+`;
