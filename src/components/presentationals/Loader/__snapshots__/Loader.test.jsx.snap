@@ -17,8 +17,12 @@ exports[`<Loader /> should render correctly 1`] = `
       }
     />
     <strong>
+<<<<<<< HEAD
       please waiting am loading content
       ...
+=======
+      please waiting am loading content...
+>>>>>>> tested loader component
     </strong>
   </div>
 </div>
