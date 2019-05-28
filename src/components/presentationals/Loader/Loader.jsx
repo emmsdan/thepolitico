@@ -10,12 +10,12 @@ const styleLoader = {
   borderRadius: 0,
 };
 
-const Loader = ({ loader }) => {
+const Loader = ({ loader, text }) => {
   return (
     <div className={`center load-overlay ${loader}`}>
       <div>
         <div className="loader center" style={styleLoader} />
-        <strong>please waiting am loading content...</strong>
+        <strong>{text || 'please waiting am loading content'}...</strong>
       </div>
     </div>
   );
@@ -23,6 +23,7 @@ const Loader = ({ loader }) => {
 
 Loader.propTypes = {
   loader: PropTypes.string,
+  text: PropTypes.string,
 };
 
 export default Loader;

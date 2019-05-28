@@ -18,7 +18,9 @@ ReactDOM.render(
     <Provider store={store}>
       <Loader loader="hide" />
       <Header pages={MenuBar} />
-      <Routes />
+      <main>
+        <Routes />
+      </main>
     </Provider>
   </BrowserRouter>,
   document.getElementById('the-politico-app'),

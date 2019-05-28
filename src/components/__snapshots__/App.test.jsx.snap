@@ -2,19 +2,6 @@
 
 exports[`App should render correctly 1`] = `
 <div>
-  <Loader
-    loader="hide"
-  />
-  <Header
-    pages={
-      Array [
-        Object {
-          "title": "My Account",
-          "url": "./account",
-        },
-      ]
-    }
-  />
   <h1
     className="toothy"
   >

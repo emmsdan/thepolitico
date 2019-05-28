@@ -425,31 +425,6 @@ main {
   width: 150px;
   height: 150px;
 }
-.toast {
-  z-index: 1001;
-  left: 48%;
-  bottom: 60px;
-  margin-left: -125px;
-  padding: 16px;
-  min-width: 250px;
-  border-radius: 2px;
-  position: fixed;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  font-size: 15px;
-  display: none;
-  transition: ease-in 5s;
-  -webkit-animation: fadein 0.5s,stay 3s 1s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, stay 3s 1s, fadeout 0.5s 4.5s;
-}
-
-.toast .toast-close {
-  padding: 4px;
-  color: rgb(243, 16, 110);
-  cursor: pointer;
-}
-
 .placeholder {
   max-width: 98%;
   margin: 0 auto;
@@ -1092,3 +1067,4 @@ a.grey-button, button.grey-button, .button.grey-button {
     margin: 0 auto;
     border-radius: 100%;
   }
+
