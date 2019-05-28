@@ -135,10 +135,12 @@
     "react-router-dom": "^5.0.0",
     "react-tag-input": "^6.4.0",
     "react-test-renderer": "^16.8.6",
-    "react-toastify": "^5.1.0",
+    "react-toastify": "^5.1.1",
+    "react-toasts": "^3.0.3",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.86.0"
+    "semantic-ui-react": "^0.86.0",
+    "toastr": "^2.1.4"
   }
 }

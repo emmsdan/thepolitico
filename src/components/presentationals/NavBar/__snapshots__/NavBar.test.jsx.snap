@@ -1,32 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NavBar /> should render correctly 1`] = `
-<nav
-  role="navigation"
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      },
+    }
+  }
 >
-  <ul>
-     
-    <li
-      className=""
-      key="0"
-    >
-      <a
-        href="./"
-      >
-        home
-      </a>
-    </li>
-    <li
-      className=""
-      key="1"
-    >
-      <a
-        href="./results"
-      >
-        results
-      </a>
-    </li>
-     
-  </ul>
-</nav>
+  <ConnectFunction
+    pages={
+      Array [
+        Object {
+          "className": "",
+          "title": "home",
+          "url": "./",
+        },
+        Object {
+          "className": "",
+          "title": "results",
+          "url": "./results",
+        },
+      ]
+    }
+  />
+</ContextProvider>
 `;

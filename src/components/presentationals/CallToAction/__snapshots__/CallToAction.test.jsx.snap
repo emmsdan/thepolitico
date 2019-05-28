@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CallToAction /> should render correctly with button 1`] = `
+<section
+  className="call-to-action"
+>
+  <div
+    className="placeholder"
+  >
+    <h2>
+      Every Vote Count
+    </h2>
+    <h4>
+      Vote and Be Voted for
+    </h4>
+    <Link
+      className="default-button"
+      to="login"
+    >
+      Register Today
+    </Link>
+  </div>
+</section>
+`;
+
+exports[`<CallToAction /> should render correctly without button 1`] = `
+<section
+  className="call-to-action"
+>
+  <div
+    className="placeholder"
+  >
+    <h2>
+      Every Vote Count
+    </h2>
+    <h4>
+      Vote and Be Voted for
+    </h4>
+  </div>
+</section>
+`;

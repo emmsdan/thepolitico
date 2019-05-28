@@ -6,6 +6,7 @@ const FormInput = props => {
   const { id, className, title, name, placeholder, defaultValue } = props;
   return (
     <div className="field">
+      <span className="error red-text" htmlFor={id || name} />
       <input
         {...props}
         className={className}
