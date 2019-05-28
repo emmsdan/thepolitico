@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<CallToAction /> should render correctly with button 1`] = `
-<div
+<section
   className="call-to-action"
 >
   <div
@@ -13,18 +13,18 @@ exports[`<CallToAction /> should render correctly with button 1`] = `
     <h4>
       Vote and Be Voted for
     </h4>
-    <a
+    <Link
       className="default-button"
-      href="login"
+      to="login"
     >
       Register Today
-    </a>
+    </Link>
   </div>
-</div>
+</section>
 `;
 
 exports[`<CallToAction /> should render correctly without button 1`] = `
-<div
+<section
   className="call-to-action"
 >
   <div
@@ -37,5 +37,5 @@ exports[`<CallToAction /> should render correctly without button 1`] = `
       Vote and Be Voted for
     </h4>
   </div>
-</div>
+</section>
 `;

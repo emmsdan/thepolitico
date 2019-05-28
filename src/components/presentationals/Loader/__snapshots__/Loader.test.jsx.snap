@@ -17,7 +17,8 @@ exports[`<Loader /> should render correctly 1`] = `
       }
     />
     <strong>
-      please waiting am loading content...
+      please waiting am loading content
+      ...
     </strong>
   </div>
 </div>
