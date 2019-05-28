@@ -23,6 +23,6 @@ exports[`<Header /> should render correctly 1`] = `
   >
      ☰ 
   </span>
-  <NavBar />
+  <ConnectFunction />
 </header>
 `;

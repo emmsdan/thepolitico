@@ -7,5 +7,8 @@ exports[`App should render correctly 1`] = `
   >
      Welcome to the Politico. 
   </h1>
+  <CallToAction
+    withButton={true}
+  />
 </div>
 `;

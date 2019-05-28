@@ -4,6 +4,10 @@ exports[`<FormInput /> should render correctly 1`] = `
 <div
   className="field"
 >
+  <span
+    className="error red-text"
+    htmlFor="emailAddress"
+  />
   <input
     className="bg-gray"
     defaultValue="sample@email.com"
