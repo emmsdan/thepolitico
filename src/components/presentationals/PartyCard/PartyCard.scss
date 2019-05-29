@@ -1,0 +1,28 @@
+.party-card {
+  margin: 10px;
+  width: 45%;
+  max-width: 300px;
+  min-height: 350px;
+  max-height: 350px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 0.5px solid #ccc;
+  img {
+    height: 200px;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: none;
+  }
+  .info {
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+    h2 {
+      text-transform: uppercase;
+      margin: 8px auto;
+    }
+  }
+}

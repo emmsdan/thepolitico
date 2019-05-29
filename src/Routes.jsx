@@ -5,6 +5,7 @@ import App from './components/App.jsx';
 import Login from './pages/Login';
 import Register from './pages/Register.jsx';
 import ForgotPassword from './pages/ForgotPassword.jsx';
+import Parties from './pages/Parties';
 
 const Routes = () => {
   return (
@@ -14,6 +15,8 @@ const Routes = () => {
       <Route path="/login" exact component={Login} />
       <Route path="/register" exact component={Register} />
       <Route path="/forgot-password" exact component={ForgotPassword} />
+      <Route path="/parties" exact component={Parties} />
+      <Route path="/party/:partyid/:partyname" exact component={Parties} />
     </Switch>
   );
 };
