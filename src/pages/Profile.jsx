@@ -26,7 +26,6 @@ class Profile extends Component {
 
   render() {
     const { user } = decodeUserInfo() || { user: '' };
-    console.log(user);
     return (
       <>
         {this.props.auth.isLoading && (
@@ -36,7 +35,7 @@ class Profile extends Component {
           <br />
           <div className="profile box no-radius">
             <img
-              src="https://twistedsifter.files.wordpress.com/2012/09/trippy-profile-pic-portrait-head-on-and-from-side-angle.jpg?w=800&h=700"
+              src="https://cdn1.iconfinder.com/data/icons/technology-devices-2/100/Profile-512.png"
               style={{
                 maxWidth: '300px',
                 boxShadow: 'none',
@@ -55,13 +54,6 @@ class Profile extends Component {
               <hr />
               {!user.isAdmin && (
                 <>
-                  <Link
-                    to="edit-profile"
-                    className="button"
-                    style={{ margin: '5px', padding: '15px' }}
-                  >
-                    Edit Profile
-                  </Link>
                   <Link
                     to="offices"
                     className="button"
