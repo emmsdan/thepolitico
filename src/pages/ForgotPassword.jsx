@@ -11,28 +11,17 @@ import { generateFormData } from '../utils/form';
 import { authenticationRequestHandler } from '../store/reducers/auth';
 import Loader from '../components/presentationals/Loader/Loader';
 import { authenticationToken } from '../utils/helpers';
-import { Link } from 'react-router-dom';
 
-class Login extends Component {
+class ForgotPassowrd extends Component {
   componentDidMount() {
     const { history } = this.props;
     authenticationToken() && history.push('/');
   }
 
-  submitLoginDetails = event => {
+  submitResetPasswordDetails = event => {
     event.preventDefault();
     const formData = generateFormData(event.target);
-    const {
-      history,
-      location: { state },
-    } = this.props;
-    let redirectUrl = state ? state.from.pathname : 'myaccount';
-    return this.props.authenticationRequestHandler(
-      formData,
-      'login',
-      history,
-      redirectUrl,
-    );
+    return this.props.authenticationRequestHandler(formData, 'reset', [], '/');
   };
 
   render() {
@@ -45,31 +34,16 @@ class Login extends Component {
         <section className="wrapper">
           <FormCard
             header="Sign in to Continue"
-            onSubmit={this.submitLoginDetails}
+            onSubmit={this.submitResetPasswordDetails}
           >
             <FormInput
-              name="username"
-              id="login_username"
-              placeholder="enter email or phone number"
-              title="Email or Phone"
-            />
-
-            <FormInput
-              name="password"
-              id="login_password"
-              placeholder="enter password"
-              title="Password"
-              type="password"
+              name="email"
+              id="email"
+              placeholder="enter email address"
+              title="Email"
             />
             <br />
             <FormButton type="submit" text="Login" />
-            <br />
-            <Link to="forgot-password"> Forgot My Password </Link>
-            <br />
-            <br />
-            <Link to="register"> Create a new Account </Link>
-            <br />
-            <br />
           </FormCard>
         </section>
       </>
@@ -77,7 +51,7 @@ class Login extends Component {
   }
 }
 
-Login.propTypes = {
+ForgotPassowrd.propTypes = {
   auth: PropTypes.object,
   url: PropTypes.string,
   poweredby: PropTypes.shape({
@@ -96,4 +70,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { authenticationRequestHandler },
-)(Login);
+)(ForgotPassowrd);
