@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import CallToAction from '../components/presentationals/CallToAction/CallToAction';
-import PartyList from '../components/containers/PartyList';
+import PartyList from '../components/containers/PartyList/PartyList';
 
 const ViewParty = ({ match }) => {
   return (

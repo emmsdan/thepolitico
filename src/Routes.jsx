@@ -1,12 +1,13 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import App from './components/App.jsx';
+import App from './pages/App';
 import Login from './pages/Login';
-import Register from './pages/Register.jsx';
-import ForgotPassword from './pages/ForgotPassword.jsx';
+import Register from './pages/Register';
+import ForgotPassword from './pages/ForgotPassword';
 import Parties from './pages/Parties';
 import ViewParty from './pages/ViewParty';
+import Offices from './pages/Offices';
 
 const Routes = () => {
   return (
@@ -18,6 +19,7 @@ const Routes = () => {
       <Route path="/forgot-password" exact component={ForgotPassword} />
       <Route path="/parties" exact component={Parties} />
       <Route path="/party/:partyid/:partyname" exact component={ViewParty} />
+      <Route path="/offices" exact component={Offices} />
     </Switch>
   );
 };

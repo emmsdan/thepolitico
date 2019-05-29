@@ -1,19 +1,19 @@
 import React from 'react';
 import CallToAction from '../components/presentationals/CallToAction/CallToAction';
-import PartyList from '../components/containers/PartyList/PartyList';
+import OfficeList from '../components/containers/OfficeList/OfficeList';
 
-const Parties = () => {
+const Offices = () => {
   return (
     <>
       <CallToAction withButton={true} />
       <br /> <br />
-      <PartyList />
+      <OfficeList />
       <br /> <br />
       <CallToAction withButton={true} />
     </>
   );
 };
 
-Parties.propTypes = {};
+Offices.propTypes = {};
 
-export default Parties;
+export default Offices;

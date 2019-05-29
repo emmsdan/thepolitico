@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { getPartyRequestHandler } from '../../store/reducers/party';
-import Loader from '../presentationals/Loader/Loader';
-import PartyCard from '../presentationals/PartyCard/PartyCard';
+import { getPartyRequestHandler } from '../../../store/reducers/party';
+import Loader from '../../presentationals/Loader/Loader';
+import PartyCard from '../../presentationals/PartyCard/PartyCard';
 
 class PartyList extends Component {
   componentDidMount() {
