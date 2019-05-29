@@ -15,7 +15,7 @@ exports[`<CallToAction /> should render correctly with button 1`] = `
     </h4>
     <Link
       className="default-button"
-      to="login"
+      to="/login"
     >
       Register Today
     </Link>
