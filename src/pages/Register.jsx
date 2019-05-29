@@ -8,18 +8,18 @@ import FormCard from '../components/presentationals/Form/FormCard';
 import FormInput from '../components/presentationals/Form/FormInput';
 import FormButton from '../components/presentationals/Form/FormButton';
 import { generateFormData } from '../utils/form';
-import { userLoginHandler } from '../store/reducers/auth';
+import { userRegistrationHandler } from '../store/reducers/auth';
 import Loader from '../components/presentationals/Loader/Loader';
 import { authenticationToken } from '../utils/helpers';
 import { Link } from 'react-router-dom';
 
-class Login extends Component {
+class Register extends Component {
   componentDidMount() {
     const { history } = this.props;
     authenticationToken() && history.push('/');
   }
 
-  submitLoginDetails = event => {
+  submitRegisterDetails = event => {
     event.preventDefault();
     const formData = generateFormData(event.target);
     const {
@@ -27,7 +27,7 @@ class Login extends Component {
       location: { state },
     } = this.props;
     let redirectUrl = state ? state.from.pathname : 'myaccount';
-    return this.props.userLoginHandler(formData, history, redirectUrl);
+    return this.props.userRegistrationHandler(formData, history, redirectUrl);
   };
 
   render() {
@@ -39,31 +39,54 @@ class Login extends Component {
         <CallToAction withButton={false} />
         <section className="wrapper">
           <FormCard
-            header="Sign in to Continue"
-            onSubmit={this.submitLoginDetails}
+            header="Create a New Account"
+            onSubmit={this.submitRegisterDetails}
           >
             <FormInput
-              name="username"
-              id="login_username"
-              placeholder="enter email or phone number"
-              title="Email or Phone"
+              name="firstName"
+              id="firstName"
+              placeholder="enter first name"
+              title="First Name"
+            />
+            <FormInput
+              name="lastName"
+              id="lastName"
+              placeholder="enter last name"
+              title="last Name"
+            />
+            <FormInput
+              name="email"
+              id="email"
+              placeholder="enter email address: ecomje@gmail.com"
+              title="Email"
+              type="email"
+            />
+            <FormInput
+              name="phoneNumber"
+              id="phoneNumber"
+              placeholder="enter phone number"
+              title="Phone Number"
             />
 
             <FormInput
               name="password"
-              id="login_password"
+              id="password"
               placeholder="enter password"
               title="Password"
               type="password"
             />
+            <div className="field">
+              <span className="error red-text" htmlFor="role" />
+              <select type="text" name="role" id="role" required>
+                <option value="user"> Voter</option>
+                <option value="politician"> Politician</option>
+              </select>
+              <label htmlFor="role">Select User Type:</label>
+            </div>
             <br />
-            <FormButton type="submit" text="Login" />
+            <FormButton type="submit" text="Register me" />
             <br />
-            <Link to="reset-password"> Forgot My Password </Link>
-            <br />
-            <br />
-            <Link to="register"> Create a new Account </Link>
-            <br />
+            <Link to="login"> login to my account </Link>
             <br />
           </FormCard>
         </section>
@@ -72,14 +95,14 @@ class Login extends Component {
   }
 }
 
-Login.propTypes = {
+Register.propTypes = {
   auth: PropTypes.object,
   url: PropTypes.string,
   poweredby: PropTypes.shape({
     url: PropTypes.string,
     name: PropTypes.string,
   }),
-  userLoginHandler: PropTypes.func.isRequired,
+  userRegistrationHandler: PropTypes.func.isRequired,
   location: PropTypes.object,
   history: PropTypes.object,
 };
@@ -90,5 +113,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { userLoginHandler },
-)(Login);
+  { userRegistrationHandler },
+)(Register);
