@@ -8,7 +8,7 @@ import FormCard from '../components/presentationals/Form/FormCard';
 import FormInput from '../components/presentationals/Form/FormInput';
 import FormButton from '../components/presentationals/Form/FormButton';
 import { generateFormData } from '../utils/form';
-import { userRegistrationHandler } from '../store/reducers/auth';
+import { authenticationRequestHandler } from '../store/reducers/auth';
 import Loader from '../components/presentationals/Loader/Loader';
 import { authenticationToken } from '../utils/helpers';
 import { Link } from 'react-router-dom';
@@ -27,7 +27,12 @@ class Register extends Component {
       location: { state },
     } = this.props;
     let redirectUrl = state ? state.from.pathname : 'myaccount';
-    return this.props.userRegistrationHandler(formData, history, redirectUrl);
+    return this.props.authenticationRequestHandler(
+      formData,
+      'signup',
+      history,
+      redirectUrl,
+    );
   };
 
   render() {
@@ -102,7 +107,7 @@ Register.propTypes = {
     url: PropTypes.string,
     name: PropTypes.string,
   }),
-  userRegistrationHandler: PropTypes.func.isRequired,
+  authenticationRequestHandler: PropTypes.func.isRequired,
   location: PropTypes.object,
   history: PropTypes.object,
 };
@@ -113,5 +118,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { userRegistrationHandler },
+  { authenticationRequestHandler },
 )(Register);

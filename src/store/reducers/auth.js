@@ -2,6 +2,9 @@ import Axios from 'axios';
 
 import { storeAuthenticationToken, toastbar } from '../../utils/helpers';
 
+export const RESET_INITIALIZED = 'RESET_INITIALIZED';
+export const RESET_SUCCESS = 'LOGIN_SUCCESS';
+export const RESET_ERROR = 'LOGIN_ERROR';
 export const LOGIN_INITIALIZED = 'LOGIN_INITIALIZED';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
@@ -17,77 +20,99 @@ export const initialState = {
   loggedInUser: {},
 };
 
-export const userRegistrationHandler = (userData, history, redirectTo) => {
+export const authenticationRequestHandler = (
+  userData,
+  actionurl,
+  history,
+  redirectTo,
+) => {
   return async dispatch => {
     try {
-      dispatch(registrationInitializer());
+      dispatch(authRequestInitializer(actionurl));
       const { data } = await Axios.post(
-        `${process.env.HOST_URL}auth/signup`,
+        `${process.env.HOST_URL}auth/${actionurl}`,
         userData,
       );
-      // eslint-disable-next-line no-console
-      console.log(data);
-      storeAuthenticationToken(data.data[0].token);
-      dispatch(registrationSuccessHandler(data.data[0]));
-      toastbar.success(data.data[0].message);
-      history.push(redirectTo);
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error.response);
-      toastbar.error(error.response.data.error, 'Error');
-      const { data } = error.response;
-      dispatch(registrationErrorHandler([data.error]));
-    }
-  };
-};
-
-export const userLoginHandler = (userData, history, redirectTo) => {
-  return async dispatch => {
-    try {
-      dispatch(loginInitializer());
-      const { data } = await Axios.post(
-        `${process.env.HOST_URL}auth/login`,
-        userData,
-      );
-      storeAuthenticationToken(data.data[0].token);
-      dispatch(loginSuccessHandler(data.data[0]));
+      actionurl !== 'reset' ? storeAuthenticationToken(data.data[0].token) : '';
+      dispatch(authRequestSuccessHandler(actionurl, data.data[0]));
       toastbar.success(data.data[0].message);
       history.push(redirectTo);
     } catch (error) {
       toastbar.error(error.response.data.error, 'Error');
       const { data } = error.response;
-      dispatch(loginErrorHandler([data.error]));
+      dispatch(authRequestErrorHandler(actionurl, [data.error]));
     }
   };
 };
 
-export const registrationInitializer = () => ({
-  type: REGISTRATION_INITIALIZED,
-});
+export const authRequestInitializer = actionType => {
+  switch (actionType) {
+    case 'login':
+      return {
+        type: LOGIN_INITIALIZED,
+      };
 
-export const registrationSuccessHandler = response => ({
-  type: REGISTRATION_SUCCESS,
-  ...response,
-});
+    case 'reset':
+      return {
+        type: RESET_INITIALIZED,
+      };
 
-export const registrationErrorHandler = error => ({
-  type: REGISTRATION_ERROR,
-  error,
-});
+    case 'signup':
+      return {
+        type: REGISTRATION_INITIALIZED,
+      };
 
-export const loginInitializer = () => ({
-  type: LOGIN_INITIALIZED,
-});
+    default:
+      return actionType;
+  }
+};
 
-export const loginSuccessHandler = response => ({
-  type: LOGIN_SUCCESS,
-  ...response,
-});
+export const authRequestSuccessHandler = (actionType, response) => {
+  switch (actionType) {
+    case 'login':
+      return {
+        type: LOGIN_SUCCESS,
+        ...response,
+      };
 
-export const loginErrorHandler = error => ({
-  type: LOGIN_ERROR,
-  error,
-});
+    case 'reset':
+      return {
+        type: RESET_SUCCESS,
+        ...response,
+      };
+
+    case 'signup':
+      return {
+        type: REGISTRATION_SUCCESS,
+        ...response,
+      };
+    default:
+      return actionType;
+  }
+};
+export const authRequestErrorHandler = (actionType, error) => {
+  switch (actionType) {
+    case 'login':
+      return {
+        type: LOGIN_ERROR,
+        error,
+      };
+
+    case 'reset':
+      return {
+        type: RESET_ERROR,
+        error,
+      };
+
+    case 'signup':
+      return {
+        type: REGISTRATION_ERROR,
+        error,
+      };
+    default:
+      return actionType;
+  }
+};
 
 export const authReducer = (state = initialState, action) => {
   switch (action.type) {
