@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PartyCard /> should render correctly 1`] = `
+<div
+  className="party-card-2"
+>
+  <Link
+    to="/party/23/Daniel"
+  >
+    <Image
+      className=""
+      src="undefined/dfsnsdfds"
+    />
+    <div
+      className="back"
+    >
+      <div>
+        <br />
+        <Image
+          src="undefined/dfsnsdfds"
+          style={
+            Object {
+              "boxShadow": "0 1px 2px #000",
+              "height": "150px",
+              "left": "34%",
+              "opacity": 1,
+              "position": "absolute",
+              "width": "150px",
+            }
+          }
+        />
+        <br />
+        <br />
+        <br />
+      </div>
+      <h1>
+        Daniel
+        <span>
+          lekki phase 11
+        </span>
+      </h1>
+    </div>
+  </Link>
+</div>
+`;
