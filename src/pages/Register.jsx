@@ -26,7 +26,7 @@ class Register extends Component {
       history,
       location: { state },
     } = this.props;
-    let redirectUrl = state ? state.from.pathname : 'myaccount';
+    let redirectUrl = state ? state.from.pathname : 'account';
     return this.props.authenticationRequestHandler(
       formData,
       'signup',
