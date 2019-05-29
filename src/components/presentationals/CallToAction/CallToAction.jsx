@@ -12,7 +12,7 @@ const CallToAction = ({ withButton }) => {
         <h4>Vote and Be Voted for</h4>
         {withButton && (
           <Link
-            to={`${isLoggedIn ? 'office' : 'login'}`}
+            to={`/${isLoggedIn ? 'office' : 'login'}`}
             className="default-button"
           >
             {isLoggedIn ? 'Cast your Vote' : 'Register Today'}
