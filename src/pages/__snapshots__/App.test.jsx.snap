@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly 1`] = `
+<div>
+  <CallToAction
+    withButton={true}
+  />
+  <h3
+    style={
+      Object {
+        "fontSize": "30px",
+        "padding": "20px",
+        "textAlign": "center",
+      }
+    }
+  >
+    Available Offices
+  </h3>
+  <ConnectFunction />
+  <h3
+    style={
+      Object {
+        "fontSize": "30px",
+        "padding": "20px",
+        "textAlign": "center",
+      }
+    }
+  >
+    Politico Parties
+  </h3>
+  <ConnectFunction />
+</div>
+`;

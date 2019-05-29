@@ -1,6 +1,6 @@
 import React from 'react';
 import CallToAction from '../components/presentationals/CallToAction/CallToAction';
-import PartyList from '../components/containers/PartyList';
+import PartyList from '../components/containers/PartyList/PartyList';
 
 const Parties = () => {
   return (

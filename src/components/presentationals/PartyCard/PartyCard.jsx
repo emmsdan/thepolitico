@@ -9,9 +9,11 @@ const PartyCard = ({ id, logourl, name, hqaddress, className }) => {
   return (
     <div className={className}>
       <Link to={`/party/${id}/${name}`}>
-        <Image src={`${process.env.IMAGE_CLOUD}/${logourl}`} className="" />
+        {logourl && (
+          <Image src={`${process.env.IMAGE_CLOUD}/${logourl}`} className="" />
+        )}
         <div className="back">
-          {className !== 'party-card-1' && (
+          {logourl && className !== 'party-card-1' && (
             <div>
               <br />
               <Image
