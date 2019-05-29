@@ -6,11 +6,39 @@ export const LOGIN_INITIALIZED = 'LOGIN_INITIALIZED';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 
+export const REGISTRATION_INITIALIZED = 'REGISTRATION_INITIALIZED';
+export const REGISTRATION_SUCCESS = 'REGISTRATION_SUCCESS';
+export const REGISTRATION_ERROR = 'REGISTRATION_ERROR';
+
 export const initialState = {
   isLoading: false,
   errorResponse: [],
   successResponse: { status: '' },
   loggedInUser: {},
+};
+
+export const userRegistrationHandler = (userData, history, redirectTo) => {
+  return async dispatch => {
+    try {
+      dispatch(registrationInitializer());
+      const { data } = await Axios.post(
+        `${process.env.HOST_URL}auth/signup`,
+        userData,
+      );
+      // eslint-disable-next-line no-console
+      console.log(data);
+      storeAuthenticationToken(data.data[0].token);
+      dispatch(registrationSuccessHandler(data.data[0]));
+      toastbar.success(data.data[0].message);
+      history.push(redirectTo);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error.response);
+      toastbar.error(error.response.data.error, 'Error');
+      const { data } = error.response;
+      dispatch(registrationErrorHandler([data.error]));
+    }
+  };
 };
 
 export const userLoginHandler = (userData, history, redirectTo) => {
@@ -32,6 +60,20 @@ export const userLoginHandler = (userData, history, redirectTo) => {
     }
   };
 };
+
+export const registrationInitializer = () => ({
+  type: REGISTRATION_INITIALIZED,
+});
+
+export const registrationSuccessHandler = response => ({
+  type: REGISTRATION_SUCCESS,
+  ...response,
+});
+
+export const registrationErrorHandler = error => ({
+  type: REGISTRATION_ERROR,
+  error,
+});
 
 export const loginInitializer = () => ({
   type: LOGIN_INITIALIZED,

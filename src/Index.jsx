@@ -10,9 +10,16 @@ import store from './store/store';
 
 import Loader from './components/presentationals/Loader/Loader';
 import Header from './components/presentationals/Header/Header';
+import Footer from './components/presentationals/Footer/Footer';
 
 const MenuBar = [{ url: './account', title: 'My Account' }];
-
+const footer = {
+  url: './',
+  poweredby: {
+    url: 'http://github.com/emmsdan',
+    name: 'EmmsDan',
+  },
+};
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
@@ -21,6 +28,7 @@ ReactDOM.render(
       <main>
         <Routes />
       </main>
+      <Footer {...footer} />
     </Provider>
   </BrowserRouter>,
   document.getElementById('the-politico-app'),
