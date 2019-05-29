@@ -32,7 +32,7 @@ class OfficeList extends Component {
             </h3>
             <div className="offices_office_options">
               <Link to={`/office/${office.id}/candidate`}>
-                <span style={{ color: '#fff' }}>view candidate</span>
+                <span style={{ color: '#fff' }}>view candidates</span>
               </Link>
             </div>
           </div>
