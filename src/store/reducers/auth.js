@@ -33,7 +33,7 @@ export const authenticationRequestHandler = (
         `${process.env.HOST_URL}auth/${actionurl}`,
         userData,
       );
-      actionurl !== 'reset' ? storeAuthenticationToken(data.data[0].token) : '';
+      actionurl !== 'reset' ? storeAuthenticationToken(data.data[0]) : '';
       dispatch(authRequestSuccessHandler(actionurl, data.data[0]));
       toastbar.success(data.data[0].message);
       history.push(redirectTo);

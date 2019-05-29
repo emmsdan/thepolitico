@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Modal = ({ id, className, header, content, action }) => {
+const Modal = ({ id, className, header, content, action, closeAction }) => {
   const [isModalDisplay, setIsModalDisplay] = useState('flex');
   let stylux = {
     display: isModalDisplay,
@@ -24,7 +24,10 @@ const Modal = ({ id, className, header, content, action }) => {
         )}
         <button
           className="blue-gray button-bigger close right"
-          onClick={() => setIsModalDisplay('none')}
+          onClick={() => {
+            closeAction() || '';
+            setIsModalDisplay('none');
+          }}
         >
           close
         </button>
@@ -39,6 +42,7 @@ Modal.propTypes = {
   header: PropTypes.any,
   content: PropTypes.any,
   action: PropTypes.any,
+  closeAction: PropTypes.any,
   state: PropTypes.string,
 };
 

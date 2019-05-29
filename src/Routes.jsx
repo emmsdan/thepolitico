@@ -8,6 +8,7 @@ import ForgotPassword from './pages/ForgotPassword';
 import Parties from './pages/Parties';
 import ViewParty from './pages/ViewParty';
 import Offices from './pages/Offices';
+import Candidate from './pages/Candidate';
 
 const Routes = () => {
   return (
@@ -20,6 +21,9 @@ const Routes = () => {
       <Route path="/parties" exact component={Parties} />
       <Route path="/party/:partyid/:partyname" exact component={ViewParty} />
       <Route path="/offices" exact component={Offices} />
+
+      <Route path="/office/:officeId/candidate" exact component={Offices} />
+      <Route path="/candidate" exact component={Candidate} />
     </Switch>
   );
 };
