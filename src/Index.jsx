@@ -12,7 +12,10 @@ import Loader from './components/presentationals/Loader/Loader';
 import Header from './components/presentationals/Header/Header';
 import Footer from './components/presentationals/Footer/Footer';
 
-const MenuBar = [{ url: './account', title: 'My Account' }];
+const MenuBar = [
+  { url: '/account', title: 'My Account' },
+  { url: '/parties', title: 'Parties' },
+];
 const footer = {
   url: './',
   poweredby: {

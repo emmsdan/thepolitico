@@ -8,12 +8,18 @@ import PartyCard from '../presentationals/PartyCard/PartyCard';
 
 class PartyList extends Component {
   componentDidMount() {
-    this.props.getPartyRequestHandler('', 'parties');
+    this.props.getPartyRequestHandler(this.props.partyId || '', 'parties');
   }
 
   render() {
     const parties = this.props.parties.parties.map((party, key) => {
-      return <PartyCard {...party} key={key} />;
+      return (
+        <PartyCard
+          {...party}
+          key={key}
+          className={this.props.partyId ? 'party-card-2' : 'party-card-1'}
+        />
+      );
     });
 
     return (
@@ -34,6 +40,7 @@ PartyList.propTypes = {
   getPartyRequestHandler: PropTypes.func.isRequired,
   parties: PropTypes.object,
   match: PropTypes.object,
+  partyId: PropTypes.string,
   isLoading: PropTypes.bool,
 };
 
