@@ -1,4 +1,5 @@
 import toastr from 'toastr';
+import jwt from 'jsonwebtoken';
 
 import 'toastr/build/toastr.min.css';
 
@@ -16,13 +17,29 @@ toastr.options = {
 
 export const toastbar = toastr;
 
+export const encodeUserInfo = user => {
+  const encode = jwt.sign(
+    {
+      exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 7,
+      user,
+    },
+    process.env.PrivateKey,
+  );
+  localStorage.setItem('__auth_token_verifier', encode);
+};
+
+export const decodeUserInfo = () => {
+  return jwt.decode(localStorage.getItem('__auth_token_verifier'));
+};
+
 export const authenticationToken = () => {
   return localStorage.getItem('__auth_token') || null;
 };
 
-export const storeAuthenticationToken = token => {
+export const storeAuthenticationToken = user => {
   if (!authenticationToken()) {
-    localStorage.setItem('__auth_token', token);
+    localStorage.setItem('__auth_token', user.token);
+    encodeUserInfo(user.user);
   }
   return authenticationToken();
 };

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import CallToAction from '../components/presentationals/CallToAction/CallToAction';
 // import PropTypes from 'prop-types'
@@ -11,7 +12,6 @@ import { generateFormData } from '../utils/form';
 import { authenticationRequestHandler } from '../store/reducers/auth';
 import Loader from '../components/presentationals/Loader/Loader';
 import { authenticationToken } from '../utils/helpers';
-import { Link } from 'react-router-dom';
 
 class Login extends Component {
   componentDidMount() {
@@ -26,7 +26,7 @@ class Login extends Component {
       history,
       location: { state },
     } = this.props;
-    let redirectUrl = state ? state.from.pathname : 'myaccount';
+    let redirectUrl = state ? state.from.pathname : 'account';
     return this.props.authenticationRequestHandler(
       formData,
       'login',
