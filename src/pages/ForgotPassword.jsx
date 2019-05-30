@@ -6,7 +6,6 @@ import CallToAction from '../components/presentationals/CallToAction/CallToActio
 // import PropTypes from 'prop-types'
 import FormCard from '../components/presentationals/Form/FormCard';
 import FormInput from '../components/presentationals/Form/FormInput';
-import FormButton from '../components/presentationals/Form/FormButton';
 import { generateFormData } from '../utils/form';
 import { authenticationRequestHandler } from '../store/reducers/auth';
 import Loader from '../components/presentationals/Loader/Loader';
@@ -43,7 +42,11 @@ class ForgotPassowrd extends Component {
               title="Email"
             />
             <br />
-            <FormButton type="submit" text="Login" />
+            <div className="field">
+              <button type="submit" className="button-bigger">
+                Reset Password
+              </button>
+            </div>
           </FormCard>
         </section>
       </>

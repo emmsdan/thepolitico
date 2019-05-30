@@ -24,7 +24,7 @@ export const encodeUserInfo = user => {
       exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 7,
       user,
     },
-    process.env.PrivateKey,
+    process.env.PrivateKey || 'emmsdan',
   );
   localStorage.setItem('__auth_token_verifier', encode);
 };
