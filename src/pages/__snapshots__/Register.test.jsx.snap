@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register should render correctly 1`] = `
+<ConnectFunction
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Register
+    auth={
+      Object {
+        "isLoading": true,
+      }
+    }
+    authenticationRequestHandler={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  >
+    <Loader
+      loader="show"
+      text="Hi, am processing your input"
+    >
+      <div
+        className="center load-overlay show"
+      >
+        <div>
+          <div
+            className="loader center"
+            style={
+              Object {
+                "backgroundImage": "url([object Object])",
+                "backgroundRepeat": "no-repeat",
+                "backgroundSize": "contain",
+                "borderRadius": 0,
+              }
+            }
+          />
+          <strong>
+            Hi, am processing your input
+            ...
+          </strong>
+        </div>
+      </div>
+    </Loader>
+    <CallToAction
+      withButton={false}
+    >
+      <section
+        className="call-to-action"
+      >
+        <div
+          className="placeholder"
+        >
+          <h2>
+            Every Vote Count
+          </h2>
+          <h4>
+            Vote and Be Voted for
+          </h4>
+        </div>
+      </section>
+    </CallToAction>
+    <section
+      className="wrapper"
+    >
+      <FormCard
+        header="Create a New Account"
+        onSubmit={[Function]}
+      >
+        <form
+          className="form-fields"
+          header="Create a New Account"
+          onSubmit={[Function]}
+        >
+          <fieldset
+            className="fieldset"
+          >
+            <legend>
+              Create a New Account
+            </legend>
+            <FormInput
+              id="firstName"
+              name="firstName"
+              placeholder="enter first name"
+              title="First Name"
+            >
+              <div
+                className="field"
+              >
+                <span
+                  className="error red-text"
+                  htmlFor="firstName"
+                />
+                <input
+                  id="firstName"
+                  name="firstName"
+                  placeholder="enter first name"
+                  title="First Name"
+                />
+                <label
+                  htmlFor="firstName"
+                >
+                  First Name
+                  :
+                </label>
+              </div>
+            </FormInput>
+            <FormInput
+              id="lastName"
+              name="lastName"
+              placeholder="enter last name"
+              title="last Name"
+            >
+              <div
+                className="field"
+              >
+                <span
+                  className="error red-text"
+                  htmlFor="lastName"
+                />
+                <input
+                  id="lastName"
+                  name="lastName"
+                  placeholder="enter last name"
+                  title="last Name"
+                />
+                <label
+                  htmlFor="lastName"
+                >
+                  last Name
+                  :
+                </label>
+              </div>
+            </FormInput>
+            <FormInput
+              id="email"
+              name="email"
+              placeholder="enter email address: ecomje@gmail.com"
+              title="Email"
+              type="email"
+            >
+              <div
+                className="field"
+              >
+                <span
+                  className="error red-text"
+                  htmlFor="email"
+                />
+                <input
+                  id="email"
+                  name="email"
+                  placeholder="enter email address: ecomje@gmail.com"
+                  title="Email"
+                  type="email"
+                />
+                <label
+                  htmlFor="email"
+                >
+                  Email
+                  :
+                </label>
+              </div>
+            </FormInput>
+            <FormInput
+              id="phoneNumber"
+              name="phoneNumber"
+              placeholder="enter phone number"
+              title="Phone Number"
+            >
+              <div
+                className="field"
+              >
+                <span
+                  className="error red-text"
+                  htmlFor="phoneNumber"
+                />
+                <input
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  placeholder="enter phone number"
+                  title="Phone Number"
+                />
+                <label
+                  htmlFor="phoneNumber"
+                >
+                  Phone Number
+                  :
+                </label>
+              </div>
+            </FormInput>
+            <FormInput
+              id="password"
+              name="password"
+              placeholder="enter password"
+              title="Password"
+              type="password"
+            >
+              <div
+                className="field"
+              >
+                <span
+                  className="error red-text"
+                  htmlFor="password"
+                />
+                <input
+                  id="password"
+                  name="password"
+                  placeholder="enter password"
+                  title="Password"
+                  type="password"
+                />
+                <label
+                  htmlFor="password"
+                >
+                  Password
+                  :
+                </label>
+              </div>
+            </FormInput>
+            <div
+              className="field"
+            >
+              <span
+                className="error red-text"
+                htmlFor="role"
+              />
+              <select
+                id="role"
+                name="role"
+                required={true}
+                type="text"
+              >
+                <option
+                  value="user"
+                >
+                   Voter
+                </option>
+                <option
+                  value="politician"
+                >
+                   Politician
+                </option>
+              </select>
+              <label
+                htmlFor="role"
+              >
+                Select User Type:
+              </label>
+            </div>
+            <br />
+            <div
+              className="field"
+            >
+              <button
+                className="button-bigger"
+                type="submit"
+              >
+                Register me
+              </button>
+            </div>
+            <br />
+            <a
+              href="login"
+            >
+               login to my account 
+            </a>
+            <br />
+          </fieldset>
+        </form>
+      </FormCard>
+    </section>
+  </Register>
+</ConnectFunction>
+`;
+
+exports[`Register should simulate submit correctly 1`] = `
+<button
+  className="button-bigger"
+  type="submit"
+>
+  Register me
+</button>
+`;

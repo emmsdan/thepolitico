@@ -6,12 +6,10 @@ import CallToAction from '../components/presentationals/CallToAction/CallToActio
 // import PropTypes from 'prop-types'
 import FormCard from '../components/presentationals/Form/FormCard';
 import FormInput from '../components/presentationals/Form/FormInput';
-import FormButton from '../components/presentationals/Form/FormButton';
 import { generateFormData } from '../utils/form';
 import { authenticationRequestHandler } from '../store/reducers/auth';
 import Loader from '../components/presentationals/Loader/Loader';
 import { authenticationToken } from '../utils/helpers';
-import { Link } from 'react-router-dom';
 
 class Register extends Component {
   componentDidMount() {
@@ -89,9 +87,13 @@ class Register extends Component {
               <label htmlFor="role">Select User Type:</label>
             </div>
             <br />
-            <FormButton type="submit" text="Register me" />
+            <div className="field">
+              <button type="submit" className="button-bigger">
+                Register me
+              </button>
+            </div>
             <br />
-            <Link to="login"> login to my account </Link>
+            <a href="login"> login to my account </a>
             <br />
           </FormCard>
         </section>

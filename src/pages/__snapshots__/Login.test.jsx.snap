@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should render correctly 1`] = `
+<ConnectFunction
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Login
+    auth={
+      Object {
+        "isLoading": true,
+      }
+    }
+    authenticationRequestHandler={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  >
+    <Loader
+      loader="show"
+      text="Hi, am processing your input"
+    >
+      <div
+        className="center load-overlay show"
+      >
+        <div>
+          <div
+            className="loader center"
+            style={
+              Object {
+                "backgroundImage": "url([object Object])",
+                "backgroundRepeat": "no-repeat",
+                "backgroundSize": "contain",
+                "borderRadius": 0,
+              }
+            }
+          />
+          <strong>
+            Hi, am processing your input
+            ...
+          </strong>
+        </div>
+      </div>
+    </Loader>
+    <CallToAction
+      withButton={false}
+    >
+      <section
+        className="call-to-action"
+      >
+        <div
+          className="placeholder"
+        >
+          <h2>
+            Every Vote Count
+          </h2>
+          <h4>
+            Vote and Be Voted for
+          </h4>
+        </div>
+      </section>
+    </CallToAction>
+    <section
+      className="wrapper"
+    >
+      <FormCard
+        header="Sign in to Continue"
+        onSubmit={[Function]}
+      >
+        <form
+          className="form-fields"
+          header="Sign in to Continue"
+          onSubmit={[Function]}
+        >
+          <fieldset
+            className="fieldset"
+          >
+            <legend>
+              Sign in to Continue
+            </legend>
+            <FormInput
+              id="login_username"
+              name="username"
+              placeholder="enter email or phone number"
+              title="Email or Phone"
+            >
+              <div
+                className="field"
+              >
+                <span
+                  className="error red-text"
+                  htmlFor="login_username"
+                />
+                <input
+                  id="login_username"
+                  name="username"
+                  placeholder="enter email or phone number"
+                  title="Email or Phone"
+                />
+                <label
+                  htmlFor="login_username"
+                >
+                  Email or Phone
+                  :
+                </label>
+              </div>
+            </FormInput>
+            <FormInput
+              id="login_password"
+              name="password"
+              placeholder="enter password"
+              title="Password"
+              type="password"
+            >
+              <div
+                className="field"
+              >
+                <span
+                  className="error red-text"
+                  htmlFor="login_password"
+                />
+                <input
+                  id="login_password"
+                  name="password"
+                  placeholder="enter password"
+                  title="Password"
+                  type="password"
+                />
+                <label
+                  htmlFor="login_password"
+                >
+                  Password
+                  :
+                </label>
+              </div>
+            </FormInput>
+            <br />
+            <div
+              className="field"
+            >
+              <button
+                className="button-bigger"
+                type="submit"
+              >
+                Login
+              </button>
+            </div>
+            <br />
+            <a
+              href="forgot-password"
+            >
+               Forgot My Password 
+            </a>
+            <br />
+            <br />
+            <a
+              href="register"
+            >
+               Create a new Account 
+            </a>
+            <br />
+            <br />
+          </fieldset>
+        </form>
+      </FormCard>
+    </section>
+  </Login>
+</ConnectFunction>
+`;
+
+exports[`Login should simulate submit correctly 1`] = `
+<button
+  className="button-bigger"
+  type="submit"
+>
+  Login
+</button>
+`;

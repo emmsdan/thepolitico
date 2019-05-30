@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import CallToAction from '../components/presentationals/CallToAction/CallToAction';
 // import PropTypes from 'prop-types'
 import FormCard from '../components/presentationals/Form/FormCard';
 import FormInput from '../components/presentationals/Form/FormInput';
-import FormButton from '../components/presentationals/Form/FormButton';
+// import FormButton from '../components/presentationals/Form/FormButton';
 import { generateFormData } from '../utils/form';
 import { authenticationRequestHandler } from '../store/reducers/auth';
 import Loader from '../components/presentationals/Loader/Loader';
@@ -62,12 +61,16 @@ class Login extends Component {
               type="password"
             />
             <br />
-            <FormButton type="submit" text="Login" />
+            <div className="field">
+              <button type="submit" className="button-bigger">
+                Login
+              </button>
+            </div>
             <br />
-            <Link to="forgot-password"> Forgot My Password </Link>
+            <a href="forgot-password"> Forgot My Password </a>
             <br />
             <br />
-            <Link to="register"> Create a new Account </Link>
+            <a href="register"> Create a new Account </a>
             <br />
             <br />
           </FormCard>
@@ -79,11 +82,6 @@ class Login extends Component {
 
 Login.propTypes = {
   auth: PropTypes.object,
-  url: PropTypes.string,
-  poweredby: PropTypes.shape({
-    url: PropTypes.string,
-    name: PropTypes.string,
-  }),
   authenticationRequestHandler: PropTypes.func.isRequired,
   location: PropTypes.object,
   history: PropTypes.object,
