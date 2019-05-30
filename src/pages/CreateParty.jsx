@@ -50,7 +50,7 @@ class CreateParty extends Component {
               placeholder="enter the address of the party"
               title="Party Address"
             />
-            <FormInput
+            <input
               name="logoUrl"
               id="logoUrl"
               type="hidden"
