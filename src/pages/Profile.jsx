@@ -171,12 +171,16 @@ class Profile extends Component {
               )}
             </div>
           </div>
-          <h1 className="centered-text biggest-text">Political Offices</h1>
-          <br />
-          <Table {...officeTable} />
-          <h1 className="centered-text biggest-text">Political Parties</h1>
-          <br />
-          <Table {...partyTable} />
+          {user.isAdmin && (
+            <>
+              <h1 className="centered-text biggest-text">Political Offices</h1>
+              <br />
+              <Table {...officeTable} />
+              <h1 className="centered-text biggest-text">Political Parties</h1>
+              <br />
+              <Table {...partyTable} />
+            </>
+          )}
         </section>
       </>
     );
