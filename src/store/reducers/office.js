@@ -21,18 +21,18 @@ export const initialState = {
   offices: [],
 };
 
-export const getOfficeRequestHandler = (officeId, actionType) => {
+export const getOfficeRequestHandler = officeId => {
   return async dispatch => {
     try {
-      dispatch(officeRequestInitializer(actionType));
+      dispatch(officeRequestInitializer());
       const { data } = await Axios.get(
         `${process.env.HOST_URL}offices/${officeId}`,
       );
-      dispatch(officeRequestSuccessHandler(actionType, data.data[0]));
+      dispatch(officeRequestSuccessHandler(data.data[0]));
     } catch (error) {
       toastbar.error(error.response.data.error, 'Error');
       const { data } = error.response;
-      dispatch(officeRequestErrorHandler(actionType, [data.error]));
+      dispatch(officeRequestErrorHandler([data.error]));
     }
   };
 };
@@ -112,39 +112,23 @@ export const deleteOfficeError = error => {
   };
 };
 
-export const officeRequestInitializer = actionType => {
-  switch (actionType) {
-    case 'offices':
-      return {
-        type: ALL_OFFICES_INITIALIZED,
-      };
-
-    default:
-      return actionType;
-  }
+export const officeRequestInitializer = () => {
+  return {
+    type: ALL_OFFICES_INITIALIZED,
+  };
 };
 
-export const officeRequestSuccessHandler = (actionType, response) => {
-  switch (actionType) {
-    case 'offices':
-      return {
-        type: ALL_OFFICES_SUCCESS,
-        response,
-      };
-    default:
-      return actionType;
-  }
+export const officeRequestSuccessHandler = response => {
+  return {
+    type: ALL_OFFICES_SUCCESS,
+    response,
+  };
 };
-export const officeRequestErrorHandler = (actionType, error) => {
-  switch (actionType) {
-    case 'offices':
-      return {
-        type: ALL_OFFICES_ERROR,
-        error,
-      };
-    default:
-      return actionType;
-  }
+export const officeRequestErrorHandler = error => {
+  return {
+    type: ALL_OFFICES_ERROR,
+    error,
+  };
 };
 
 export const officeReducer = (state = initialState, action) => {
