@@ -11,10 +11,31 @@ export const DELETE_PARTY_INITIALIZED = 'DELETE_PARTY_INITIALIZED';
 export const DELETE_PARTY_SUCCESS = 'DELETE_PARTY_SUCCESS';
 export const DELETE_PARTY_ERROR = 'DELETE_PARTY_ERROR';
 
+export const CREATE_PARTY_INITIALIZED = 'CREATE_PARTY_INITIALIZED';
+export const CREATE_PARTY_SUCCESS = 'CREATE_PARTY_SUCCESS';
+export const CREATE_PARTY_ERROR = 'CREATE_PARTY_ERROR';
+
 export const initialState = {
   isLoading: false,
   errorResponse: [],
   parties: [],
+};
+
+export const createPartyRequestHandler = (formData, history) => {
+  return async dispatch => {
+    try {
+      dispatch(createPartyInitialized());
+      const { data } = await http.post('parties/', formData);
+      dispatch(createPartySuccess(data.data[0]));
+      toastbar.success('Party Registered Successfully', 'Success');
+      history.push('/account');
+    } catch (error) {
+      console.log(error);
+      toastbar.error(error.response.data.error, 'Error');
+      const { data } = error.response;
+      dispatch(createPartyError([data.error]));
+    }
+  };
 };
 
 export const getPartyRequestHandler = (partyId, actionType) => {
@@ -48,6 +69,26 @@ export const getPartyDeleteRequestHandler = party => {
       const { data } = error.response;
       dispatch(deletePartyError([data.error]));
     }
+  };
+};
+
+export const createPartyInitialized = () => {
+  return {
+    type: CREATE_PARTY_INITIALIZED,
+  };
+};
+
+export const createPartySuccess = response => {
+  return {
+    type: CREATE_PARTY_SUCCESS,
+    response,
+  };
+};
+
+export const createPartyError = error => {
+  return {
+    type: CREATE_PARTY_ERROR,
+    error,
   };
 };
 
@@ -110,6 +151,7 @@ export const partyReducer = (state = initialState, action) => {
   switch (action.type) {
     case ALL_PARTIES_INITIALIZED:
     case DELETE_PARTY_INITIALIZED:
+    case CREATE_PARTY_INITIALIZED:
       return {
         ...state,
         isLoading: true,
@@ -118,7 +160,15 @@ export const partyReducer = (state = initialState, action) => {
     case ALL_PARTIES_SUCCESS:
       return {
         ...state,
-        parties: action.response,
+        parties: [...state.parties, ...action.response],
+        isLoading: false,
+        errorResponse: [],
+      };
+
+    case CREATE_PARTY_SUCCESS:
+      return {
+        ...state,
+        parties: [...state.parties, action.response],
         isLoading: false,
         errorResponse: [],
       };
@@ -133,6 +183,7 @@ export const partyReducer = (state = initialState, action) => {
 
     case ALL_PARTIES_ERROR:
     case DELETE_PARTY_ERROR:
+    case CREATE_PARTY_ERROR:
       return {
         ...state,
         isLoading: false,
