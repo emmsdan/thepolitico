@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 
 import Login from './Login';
 let store = {};
-describe.only('Login', () => {
+describe('Login', () => {
   beforeEach(() => {
     const mockStore = configureMockStore();
     store = mockStore({
