@@ -168,7 +168,6 @@ export const partyReducer = (state = initialState, action) => {
     case CREATE_PARTY_SUCCESS:
       return {
         ...state,
-        parties: [...state.parties, action.response],
         isLoading: false,
         errorResponse: [],
       };
