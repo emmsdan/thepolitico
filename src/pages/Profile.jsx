@@ -15,22 +15,33 @@ import {
   getPartyDeleteRequestHandler,
 } from '../store/reducers/party';
 import Modal from '../components/presentationals/Modal/Modal';
+import {
+  getOfficeRequestHandler,
+  getOfficeDeleteRequestHandler,
+} from '../store/reducers/office';
 
 class Profile extends Component {
   state = {
     isDeleting: false,
     currentItem: null,
-    isDeleteModal: false,
+    isDeletePartyModal: false,
+    isDeleteOfficeModal: false,
   };
   componentDidMount() {
     const { history } = this.props;
     !authenticationToken() && history.push('/');
     this.props.getPartyRequestHandler('', 'parties');
+    this.props.getOfficeRequestHandler('', 'offices');
   }
 
   deleteParties = () => {
     this.props.getPartyDeleteRequestHandler(this.state.currentItem);
-    this.setState({ isDeleteModal: false });
+    this.setState({ isDeletePartyModal: false });
+  };
+
+  deleteOffice = () => {
+    this.props.getOfficeDeleteRequestHandler(this.state.currentItem);
+    this.setState({ isDeleteOfficeModal: false });
   };
 
   render() {
@@ -40,8 +51,13 @@ class Profile extends Component {
       title: party.name,
       description: party.hqaddress,
     }));
+    const offices = this.props.offices.offices.map(office => ({
+      id: office.id,
+      title: office.name,
+      description: office.name,
+    }));
     const { user } = decodeUserInfo() || { user: '' };
-    const table = {
+    const partyTable = {
       header: {
         one: 'Logo',
         two: 'party name',
@@ -49,21 +65,42 @@ class Profile extends Component {
       },
       content: [...parties],
       onClick: (name, id) =>
-        this.setState({ currentItem: { name, id }, isDeleteModal: true }),
+        this.setState({ currentItem: { name, id }, isDeletePartyModal: true }),
+    };
+    const officeTable = {
+      header: {
+        one: 'id',
+        two: 'office type',
+        three: 'office name',
+      },
+      content: [...offices],
+      onClick: (name, id) =>
+        this.setState({ currentItem: { name, id }, isDeleteOfficeModal: true }),
     };
     return (
       <>
         {this.props.parties.isLoading && (
           <Loader loader="show" text="Hi, fetching data" />
         )}
-        {this.state.isDeleteModal && (
+        {this.state.isDeletePartyModal && (
           <Modal
             header="Do you want to Delete"
             content={`${this.state.currentItem.name}?`}
-            closeAction={() => this.setState({ isDeleteModal: false })}
+            closeAction={() => this.setState({ isDeletePartyModal: false })}
             action={{
               button: { className: 'red', text: 'delete' },
               onClick: this.deleteParties,
+            }}
+          />
+        )}
+        {this.state.isDeleteOfficeModal && (
+          <Modal
+            header="Do you want to Delete"
+            content={`${this.state.currentItem.name}?`}
+            closeAction={() => this.setState({ isDeleteOfficeModal: false })}
+            action={{
+              button: { className: 'red', text: 'delete' },
+              onClick: this.deleteOffice,
             }}
           />
         )}
@@ -134,9 +171,12 @@ class Profile extends Component {
               )}
             </div>
           </div>
+          <h1 className="centered-text biggest-text">Political Offices</h1>
+          <br />
+          <Table {...officeTable} />
           <h1 className="centered-text biggest-text">Political Parties</h1>
           <br />
-          <Table {...table} />
+          <Table {...partyTable} />
         </section>
       </>
     );
@@ -145,22 +185,30 @@ class Profile extends Component {
 
 Profile.propTypes = {
   parties: PropTypes.object,
+  offices: PropTypes.object,
   url: PropTypes.string,
   poweredby: PropTypes.shape({
     url: PropTypes.string,
     name: PropTypes.string,
   }),
   getPartyRequestHandler: PropTypes.func.isRequired,
+  getOfficeRequestHandler: PropTypes.func.isRequired,
   getPartyDeleteRequestHandler: PropTypes.func.isRequired,
+  getOfficeDeleteRequestHandler: PropTypes.func.isRequired,
   location: PropTypes.object,
   history: PropTypes.object,
 };
 
 const mapStateToProps = state => {
-  return { parties: state.parties };
+  return { parties: state.parties, offices: state.offices };
 };
 
 export default connect(
   mapStateToProps,
-  { getPartyRequestHandler, getPartyDeleteRequestHandler },
+  {
+    getPartyRequestHandler,
+    getPartyDeleteRequestHandler,
+    getOfficeRequestHandler,
+    getOfficeDeleteRequestHandler,
+  },
 )(Profile);
