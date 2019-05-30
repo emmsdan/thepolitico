@@ -54,7 +54,7 @@ class CreateParty extends Component {
               name="logoUrl"
               id="logoUrl"
               type="hidden"
-              value="no-logo-here"
+              value="https://www.greatplacetowork.com/templates/gptw/images/no-image-available.jpg"
             />
 
             <br />
