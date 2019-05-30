@@ -2,6 +2,7 @@ import toastr from 'toastr';
 import jwt from 'jsonwebtoken';
 
 import 'toastr/build/toastr.min.css';
+import axios from 'axios';
 
 toastr.options = {
   showMethod: 'slideDown',
@@ -50,3 +51,8 @@ export const destoryToken = () => {
 export const redirect = history => {
   return history;
 };
+
+export const http = axios.create({
+  baseURL: process.env.HOST_URL,
+  headers: { 'x-access-token': authenticationToken() },
+});

@@ -24,9 +24,7 @@ class PartyList extends Component {
 
     return (
       <>
-        {this.props.parties.isLoading && (
-          <Loader loader="show" text="Hi, am processing your input" />
-        )}
+        {this.props.parties.isLoading && <Loader loader="show" />}
         <div className="parties">
           <br /> <br />
           {parties}

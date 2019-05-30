@@ -42,9 +42,7 @@ class OfficeList extends Component {
 
     return (
       <>
-        {this.props.offices.isLoading && (
-          <Loader loader="show" text="Hi, am processing your input" />
-        )}
+        {this.props.offices.isLoading && <Loader loader="show" />}
         <div className="offices">
           <br /> <br />
           {offices}

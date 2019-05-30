@@ -48,7 +48,7 @@ exports[`<Modal /> should render correctly 1`] = `
         className="blue-gray button-bigger close right"
         onClick={[Function]}
       >
-        close
+        no cancel
       </button>
     </div>
   </div>

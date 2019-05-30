@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Table /> should render correctly 1`] = `
+<table
+  className="party-admin"
+>
+  <tbody>
+    <tr>
+      <th>
+        Logo
+      </th>
+      <th>
+        party name
+      </th>
+      <th>
+        HEAD QUARTER ADDRESS
+      </th>
+      <th>
+        action
+      </th>
+    </tr>
+  </tbody>
+  <tbody
+    key="0"
+  >
+    <tr>
+      <td>
+        <img
+          className="circle"
+          src="undefined/party.logourl"
+        />
+      </td>
+      <td>
+         
+        party name
+         
+      </td>
+      <td>
+         
+        party hqaddress
+         
+      </td>
+      <td>
+        <Link
+          className="button blue"
+          to="parties/1/edit"
+        >
+          edit
+        </Link>
+        <Link
+          className="button red"
+          onClick={[Function]}
+          to="#delete"
+        >
+          delete
+        </Link>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
