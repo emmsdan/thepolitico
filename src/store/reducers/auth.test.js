@@ -1,10 +1,7 @@
 import { http } from '../../utils/helpers';
 import {
-  REGISTRATION_SUCCESS,
   REGISTRATION_INITIALIZED,
   REGISTRATION_ERROR,
-  LOGIN_SUCCESS,
-  LOGIN_INITIALIZED,
   authRequestInitializer,
   authRequestSuccessHandler,
   authRequestErrorHandler,
@@ -26,15 +23,6 @@ const initialState = {
   loggedInUser: {},
 };
 describe('SIGNUP ACTIONS', () => {
-  const signupMockData = {
-    status: 'success',
-    message: 'Please check your mail to verify your account',
-    data: {
-      token:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFhN2RmMzY5LTgyNTYtNDZhZS05ZDZmLTEwODhmMzg4M2U5MyIsImVtYWlsIjoia2tAemFoLmNvbSIsImlhdCI6MTU1NzQxMDc3NSwiZXhwIjoxNTYwMDAyNzc1fQ.MgpJl20ZjZmQIOcXJ7KjHgilwOjW9DrGCUhXJV7rjwM',
-    },
-  };
-
   beforeEach(() => {
     store = setupStore(initialState);
   });
@@ -75,12 +63,6 @@ describe('SIGNUP ACTIONS', () => {
     });
   });
 });
-
-const loggedInUser = {
-  id: '270a37f7-765a-4626-8317-29e6a62d97b9',
-  email: 'favourafolayan@gmail.com',
-  username: 'favourafolayan@gmail.com',
-};
 
 describe('auth reducer test suite', () => {
   beforeEach(() => {
