@@ -30,6 +30,7 @@ class Profile extends Component {
 
   deleteParties = () => {
     this.props.getPartyDeleteRequestHandler(this.state.currentItem);
+    this.setState({ isDeleteModal: false });
   };
 
   render() {
