@@ -10,6 +10,7 @@ import ViewParty from './pages/ViewParty';
 import Offices from './pages/Offices';
 import Profile from './pages/Profile';
 import CreateParty from './pages/CreateParty';
+import CreateOffice from './pages/CreateOffice';
 
 const Routes = () => {
   return (
@@ -25,6 +26,7 @@ const Routes = () => {
 
       <Route path="/account" exact component={Profile} />
       <Route path="/parties/create" exact component={CreateParty} />
+      <Route path="/offices/create" exact component={CreateOffice} />
     </Switch>
   );
 };

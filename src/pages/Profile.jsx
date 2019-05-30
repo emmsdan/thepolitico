@@ -110,7 +110,7 @@ class Profile extends Component {
               {user.isAdmin && (
                 <>
                   <Link
-                    to="offices"
+                    to="offices/create"
                     className="button"
                     style={{ margin: '5px', padding: '15px' }}
                   >
