@@ -10,21 +10,29 @@ import { authenticationToken } from '../utils/helpers';
 import './Profile.scss';
 import { decodeUserInfo } from '../utils/helpers';
 import Table from '../components/presentationals/Table/Table';
-import { getPartyRequestHandler } from '../store/reducers/party';
+import {
+  getPartyRequestHandler,
+  getPartyDeleteRequestHandler,
+} from '../store/reducers/party';
+import Modal from '../components/presentationals/Modal/Modal';
 
 class Profile extends Component {
+  state = {
+    isDeleting: false,
+    currentItem: null,
+    isDeleteModal: false,
+  };
   componentDidMount() {
     const { history } = this.props;
     !authenticationToken() && history.push('/');
     this.props.getPartyRequestHandler('', 'parties');
   }
 
-  submitResetPasswordDetails = event => {
-    event.preventDefault();
+  deleteParties = () => {
+    this.props.getPartyDeleteRequestHandler(this.state.currentItem);
   };
 
   render() {
-    console.log(this.props);
     const parties = this.props.parties.parties.map(party => ({
       id: party.id,
       logo: party.logourl,
@@ -39,11 +47,24 @@ class Profile extends Component {
         three: 'HEAD QUARTER ADDRESS',
       },
       content: [...parties],
+      onClick: (name, id) =>
+        this.setState({ currentItem: { name, id }, isDeleteModal: true }),
     };
     return (
       <>
         {this.props.parties.isLoading && (
           <Loader loader="show" text="Hi, fetching data" />
+        )}
+        {this.state.isDeleteModal && (
+          <Modal
+            header="Do you want to Delete"
+            content={`${this.state.currentItem.name}?`}
+            closeAction={() => this.setState({ isDeleteModal: false })}
+            action={{
+              button: { className: 'red', text: 'delete' },
+              onClick: this.deleteParties,
+            }}
+          />
         )}
         <section className="wrapper">
           <br />
@@ -129,6 +150,7 @@ Profile.propTypes = {
     name: PropTypes.string,
   }),
   getPartyRequestHandler: PropTypes.func.isRequired,
+  getPartyDeleteRequestHandler: PropTypes.func.isRequired,
   location: PropTypes.object,
   history: PropTypes.object,
 };
@@ -139,5 +161,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { getPartyRequestHandler },
+  { getPartyRequestHandler, getPartyDeleteRequestHandler },
 )(Profile);

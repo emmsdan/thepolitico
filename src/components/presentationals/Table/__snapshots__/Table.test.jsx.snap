@@ -27,7 +27,7 @@ exports[`<Table /> should render correctly 1`] = `
       <td>
         <img
           className="circle"
-          src="party.logourl"
+          src="undefined/party.logourl"
         />
       </td>
       <td>

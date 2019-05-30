@@ -4,13 +4,20 @@ import { Link } from 'react-router-dom';
 
 // import logo from '../../../assets/images/official/favicon.png';
 
-const Table = ({ header, content }) => {
+const Table = ({ header, content, onClick }) => {
   const items = content.map((item, key) => {
     return (
       <tbody key={key}>
         <tr>
           <td>
-            {item.logo ? <img src={item.logo} className="circle" /> : item.id}
+            {item.logo ? (
+              <img
+                src={`${process.env.IMAGE_CLOUD}/${item.logo}`}
+                className="circle"
+              />
+            ) : (
+              item.id
+            )}
           </td>
           <td> {item.title} </td>
           <td> {item.description} </td>
@@ -22,9 +29,7 @@ const Table = ({ header, content }) => {
             )}
             <Link
               to="#delete"
-              onClick={() => {
-                alert(item.id);
-              }}
+              onClick={() => onClick(item.title, item.id)}
               className="button red"
             >
               delete
@@ -52,6 +57,7 @@ const Table = ({ header, content }) => {
 Table.propTypes = {
   header: PropTypes.object,
   content: PropTypes.array,
+  onClick: PropTypes.any,
 };
 
 export default Table;
